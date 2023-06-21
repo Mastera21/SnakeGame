@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{AE18D201-9ABA-FCD7-8375-102C6FB68328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\button">
+      <UniqueIdentifier>{19495751-8509-D387-4E44-1C05BAC31764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\entity">
+      <UniqueIdentifier>{5AE9D757-C6A9-538E-8FE4-9C0BFB63986A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\game">
+      <UniqueIdentifier>{375B4F8A-A310-C87F-2C05-C25698B9BE83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\menu">
+      <UniqueIdentifier>{B2B6528A-1E6C-CB7F-A760-C5561315C283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interfaces">
+      <UniqueIdentifier>{C9206369-B5D8-A4B6-1EE0-7D120AB73FA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interfaces\score">
+      <UniqueIdentifier>{D47BB0D5-C074-CF27-E9A6-B4ACD5FEAE33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager">
+      <UniqueIdentifier>{605C8DB4-CC3B-0C50-D553-972641B272B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager\header">
+      <UniqueIdentifier>{B8EB01D1-A4B9-F5D6-8D4D-66FD79BAD13B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager\src">
+      <UniqueIdentifier>{774AC0BA-E3FF-38B0-6CF4-3287D8A82FB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\button">
+      <UniqueIdentifier>{B8365E52-A4EE-9F9F-0DF6-78FBF9CC3A90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\entity">
+      <UniqueIdentifier>{F9D6DE58-E58E-20A6-4E96-F9013A6DBB96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{165530CF-0222-8BDA-2B3B-79821767C068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\menu">
+      <UniqueIdentifier>{91B033CF-7D7D-8EDA-A696-7C8292C2C368}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\Application.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\button\Button.h">
+      <Filter>header\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\entity\Entity.h">
+      <Filter>header\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game\Food.h">
+      <Filter>header\game</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game\Snake.h">
+      <Filter>header\game</Filter>
+    </ClInclude>
+    <ClInclude Include="header\menu\EndMenu.h">
+      <Filter>header\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="header\menu\MainMenu.h">
+      <Filter>header\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\score\ScoreInterface.h">
+      <Filter>interfaces\score</Filter>
+    </ClInclude>
+    <ClInclude Include="manager\header\TextWidget.h">
+      <Filter>manager\header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="manager\src\TextWidget.cpp">
+      <Filter>manager\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\button\Button.cpp">
+      <Filter>src\button</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\Entity.cpp">
+      <Filter>src\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Food.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Snake.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\EndMenu.cpp">
+      <Filter>src\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\menu\MainMenu.cpp">
+      <Filter>src\menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="premake5.lua" />
+  </ItemGroup>
+</Project>
