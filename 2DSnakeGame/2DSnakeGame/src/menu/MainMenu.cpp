@@ -40,25 +40,18 @@ void MainMenu::deinit() {
 }
 
 void MainMenu::handleEvent(const std::unique_ptr<sf::RenderWindow>& window, bool& isStartButtonPressed, bool& exitButton) {
-
-	if (m_Buttons[0].isMouseHover(window)) {
-		m_Buttons[0].setBackColor(sf::Color::Green);
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			isStartButtonPressed = true;
+	for (auto& button : m_Buttons) {
+		if (button.isMouseHover(window)) {
+			button.setBackColor(sf::Color::Green);
+			if (button.equalTitle("Start") && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+				isStartButtonPressed = true;
+			}else if (button.equalTitle("Exit") && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+				exitButton = true;
+			}
+		} else {
+			button.setBackColor(sf::Color::White);
 		}
-	}else {
-		m_Buttons[0].setBackColor(sf::Color::White);
 	}
-
-	if (m_Buttons[1].isMouseHover(window)) {
-		m_Buttons[1].setBackColor(sf::Color::Green);
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			exitButton = true;
-		}
-	}else {
-		m_Buttons[1].setBackColor(sf::Color::White);
-	}
-
 }
 
 void MainMenu::draw(const std::unique_ptr<sf::RenderWindow>& window) {

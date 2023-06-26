@@ -20,11 +20,17 @@ public:
 	void draw(const std::unique_ptr<sf::RenderWindow>& window);
 
 	bool isMouseHover(const std::unique_ptr<sf::RenderWindow>& window);
+	bool equalTitle(const std::string& titleName);
+
+	inline std::string getTitleName() const noexcept;
 
 private:
 	sf::RectangleShape m_Button;
 	sf::Text m_Text;
 	sf::Font m_Font;
+
+private:
+	std::string m_TitleName;
 
 };
 

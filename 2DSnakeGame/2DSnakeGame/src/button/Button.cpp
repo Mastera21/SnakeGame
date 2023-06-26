@@ -13,6 +13,8 @@ int32_t Button::init(std::string path, std::string text, sf::Vector2f size, int 
 		std::cerr << "Cannot open font for file -> Button::init()\n";
 	}
 
+	m_TitleName = text;
+
 	m_Text.setString(text);
 	m_Text.setCharacterSize(textSize);
 	m_Text.setFont(m_Font);
@@ -58,4 +60,12 @@ bool Button::isMouseHover(const std::unique_ptr<sf::RenderWindow>& window) {
 		return true;
 	}
 	return false;
+}
+
+bool Button::equalTitle(const std::string& titleName) {
+	return m_TitleName == titleName;
+}
+
+std::string Button::getTitleName() const noexcept {
+	return m_TitleName;
 }
