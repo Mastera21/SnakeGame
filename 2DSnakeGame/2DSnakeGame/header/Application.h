@@ -31,10 +31,11 @@ public:
 
 private:
 	std::unique_ptr<sf::RenderWindow> m_Window;
-	std::unique_ptr<MainMenu> m_MainMenu;
-	std::unique_ptr<EndMenu> m_EndMenu;
-	std::unique_ptr<Food> m_Food;
 
+	MainMenu m_MainMenu;
+	EndMenu m_EndMenu;
+
+	Food m_Food;
 	Snake m_Snake;
 
 private:

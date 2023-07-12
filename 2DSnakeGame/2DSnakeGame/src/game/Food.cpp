@@ -9,6 +9,8 @@
 
 //Own components headers
 
+Food::Food() : Entity(sf::Vector2f(0.0f, 0.0f), sf::Color::Black) {}
+
 Food::Food(const sf::Vector2f& size, const sf::Vector2f& pos, const sf::Color& color) : Entity(size, color) {
 
 	Entity::setSize(size);

@@ -12,8 +12,7 @@ int32_t Application::init() {
 	m_Window = std::make_unique<sf::RenderWindow>(sf::VideoMode(700, 700), "");
 	m_Window->setFramerateLimit(60);
 
-	m_MainMenu = std::make_unique<MainMenu>();
-	if (EXIT_SUCCESS != m_MainMenu->init(m_Window)) {
+	if (EXIT_SUCCESS != m_MainMenu.init(m_Window)) {
 		std::cout << "Error, m_MainMenu.init() failed.\n";
 		return EXIT_FAILURE;
 	}
@@ -23,14 +22,10 @@ int32_t Application::init() {
 		return EXIT_FAILURE;
 	}
 
-	m_Food = std::make_unique<Food>(sf::Vector2f(30.f,30.0f),sf::Vector2f(rand() % 650 + 40, rand() % 600 + 40), sf::Color::Red);
-	if (m_Food == nullptr) {
-		std::cout << "Error, Food() failed.\n";
-		return EXIT_FAILURE;
-	}
+	//Initializing Food
+	m_Food = Food(sf::Vector2f(30.f,30.0f),sf::Vector2f(rand() % 650 + 40, rand() % 600 + 40), sf::Color::Red);
 
-	m_EndMenu = std::make_unique<EndMenu>();
-	if (EXIT_SUCCESS != m_EndMenu->init(m_Window)) {
+	if (EXIT_SUCCESS != m_EndMenu.init(m_Window)) {
 		std::cout << "Error, m_EndMenu.init() failed.\n";
 		return EXIT_FAILURE;
 	}
@@ -43,7 +38,7 @@ int32_t Application::init() {
 
 void Application::deinit() {
 	m_Snake.deinit();
-	m_EndMenu->deinit();
+	m_EndMenu.deinit();
 }
 
 void Application::main() {
@@ -70,7 +65,7 @@ void Application::update(sf::Event& e) {
 			break;
 		}
 		m_Snake.buttonsEvent(e);
-		m_Window->setTitle("Snake 2D					Score: " + std::to_string(m_Food->getScore()));
+		m_Window->setTitle("Snake 2D					Score: " + std::to_string(m_Food.getScore()));
 	}
 
 	handleEvent();
@@ -86,14 +81,14 @@ void Application::draw() {
 	if (!m_Snake.collisionWithBody()) {
 		if (m_IsStartButtonPressed) {
 			m_Snake.draw(m_Window);
-			m_Food->draw(m_Window);
-			m_MainMenu->deinit();
+			m_Food.draw(m_Window);
+			m_MainMenu.deinit();
 		}
 		else {
-			m_MainMenu->draw(m_Window);
+			m_MainMenu.draw(m_Window);
 		}
 	}else {
-		m_EndMenu->draw(m_Window, std::to_string(m_Food->getScore()));
+		m_EndMenu.draw(m_Window, std::to_string(m_Food.getScore()));
 	}
 
 	m_Window->display();
@@ -103,12 +98,12 @@ void Application::handleEvent() {
 	if (!m_Snake.collisionWithBody()) {
 		if (m_IsStartButtonPressed) {
 			m_Snake.handleEvent(m_Window);
-			m_Food->update(m_Snake);
+			m_Food.update(m_Snake);
 		}else {
-			m_MainMenu->handleEvent(m_Window, m_IsStartButtonPressed, m_IsStopButtonPressed);
+			m_MainMenu.handleEvent(m_Window, m_IsStartButtonPressed, m_IsStopButtonPressed);
 		}
 	}else {
-		m_EndMenu->handleEvent(m_Window, m_IsStopButtonPressed);
+		m_EndMenu.handleEvent(m_Window, m_IsStopButtonPressed);
 	}
 }
 
