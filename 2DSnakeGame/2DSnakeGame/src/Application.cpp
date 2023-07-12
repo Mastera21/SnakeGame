@@ -12,6 +12,8 @@ int32_t Application::init() {
 	m_Window = std::make_unique<sf::RenderWindow>(sf::VideoMode(700, 700), "");
 	m_Window->setFramerateLimit(60);
 
+	srand(unsigned(time(NULL)));
+
 	if (EXIT_SUCCESS != m_MainMenu.init(m_Window)) {
 		std::cout << "Error, m_MainMenu.init() failed.\n";
 		return EXIT_FAILURE;
