@@ -46,13 +46,11 @@ int32_t EndMenu::init(const std::unique_ptr<sf::RenderWindow>& window) {
 	return EXIT_SUCCESS;
 }
 void EndMenu::deinit() {
-	delete m_ScoreInterface;
-
 	m_TextWidgets.clear();
 	m_Buttons.clear();
 }
-void EndMenu::draw(const std::unique_ptr<sf::RenderWindow>& window) {
-	m_TextWidgets[2].setTitleName(m_ScoreInterface->getScore());
+void EndMenu::draw(const std::unique_ptr<sf::RenderWindow>& window, const std::string& socre) {
+	m_TextWidgets[2].setTitleName(socre);
 
 	for (auto& i : m_TextWidgets) {
 		i.draw(window);

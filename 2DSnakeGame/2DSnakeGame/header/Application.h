@@ -13,12 +13,10 @@
 #include "../header/menu/MainMenu.h"
 #include "../header/menu/EndMenu.h"
 
-#include "../interfaces/score/ScoreInterface.h"
-
 //Forward declarations
 
 
-class Application : public ScoreInterface {
+class Application {
 public:
 
 	int32_t init();
@@ -30,8 +28,6 @@ public:
 	void handleEvent();
 
 	bool requestForExit(sf::Event& e);
-
-	virtual std::string getScore() const override;
 
 private:
 	std::unique_ptr<sf::RenderWindow> m_Window;

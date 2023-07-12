@@ -29,7 +29,7 @@ int32_t Application::init() {
 		return EXIT_FAILURE;
 	}
 
-	m_EndMenu = std::make_unique<EndMenu>(this);
+	m_EndMenu = std::make_unique<EndMenu>();
 	if (EXIT_SUCCESS != m_EndMenu->init(m_Window)) {
 		std::cout << "Error, m_EndMenu.init() failed.\n";
 		return EXIT_FAILURE;
@@ -43,6 +43,7 @@ int32_t Application::init() {
 
 void Application::deinit() {
 	m_Snake.deinit();
+	m_EndMenu->deinit();
 }
 
 void Application::main() {
@@ -92,7 +93,7 @@ void Application::draw() {
 			m_MainMenu->draw(m_Window);
 		}
 	}else {
-		m_EndMenu->draw(m_Window);
+		m_EndMenu->draw(m_Window, std::to_string(m_Food->getScore()));
 	}
 
 	m_Window->display();
@@ -127,8 +128,4 @@ bool Application::requestForExit(sf::Event& e) {
 		break;
 	}
 	return false;
-}
-
-std::string Application::getScore() const {
-	return std::to_string(m_Food->getScore());
 }
