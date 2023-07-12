@@ -69,9 +69,6 @@
     <ClInclude Include="header\menu\MainMenu.h">
       <Filter>header\menu</Filter>
     </ClInclude>
-    <ClInclude Include="interfaces\score\ScoreInterface.h">
-      <Filter>interfaces\score</Filter>
-    </ClInclude>
     <ClInclude Include="manager\header\TextWidget.h">
       <Filter>manager\header</Filter>
     </ClInclude>

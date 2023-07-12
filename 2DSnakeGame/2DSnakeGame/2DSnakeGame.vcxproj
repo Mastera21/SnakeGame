@@ -102,7 +102,6 @@
     <ClInclude Include="header\game\Snake.h" />
     <ClInclude Include="header\menu\EndMenu.h" />
     <ClInclude Include="header\menu\MainMenu.h" />
-    <ClInclude Include="interfaces\score\ScoreInterface.h" />
     <ClInclude Include="manager\header\TextWidget.h" />
   </ItemGroup>
   <ItemGroup>
