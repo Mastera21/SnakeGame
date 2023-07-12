@@ -17,8 +17,7 @@ public:
 	virtual ~Entity() = default;
 
 	virtual void draw(const std::unique_ptr<sf::RenderWindow>& window);
-	virtual void update(Snake& snake) = 0;
-	//virtual void update(Snake& snakem, uint32_t& socre) = 0;
+	virtual void update(Snake& snake, int& snakeSpeed) = 0;
 
 	sf::Vector2f getPos();
 	sf::RectangleShape getBody();

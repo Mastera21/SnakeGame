@@ -28,13 +28,18 @@ void Food::draw(const std::unique_ptr<sf::RenderWindow>& window) {
 	window->draw(Entity::getBody());
 }
 
-void Food::update(Snake& snake) {
+void Food::update(Snake& snake, int& snakeSpeed) {
 	bool newPos = false;
 
 	if (snake.getSnakeBody().front().getGlobalBounds().intersects(Entity::getBody().getGlobalBounds())) {
 	
 		m_Score += 5;
-	
+		snakeSpeed -= 2;
+
+		if (snakeSpeed <= 0) {
+			snakeSpeed = 0;
+		}
+
 		while (!newPos) {
 			m_FoodX = rand() % 650 + 40;
 			m_FoodY = rand() % 600 + 40;

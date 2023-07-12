@@ -18,7 +18,7 @@ public:
 	Food(const sf::Vector2f& size, const sf::Vector2f& pos, const sf::Color& color);
 
 	virtual void draw(const std::unique_ptr<sf::RenderWindow>& window) override;
-	virtual void update(Snake& snake) override;
+	virtual void update(Snake& snake, int& snakeSpeed) override;
 
 	uint32_t getScore() const noexcept;
 

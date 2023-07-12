@@ -35,6 +35,8 @@ int32_t Application::init() {
 	m_IsStartButtonPressed = false;
 	m_IsStopButtonPressed = false;
 
+	m_SnakeSpeed = 100;
+
 	return EXIT_SUCCESS;
 }
 
@@ -51,7 +53,7 @@ void Application::main() {
 	}
 
 	while (m_Window->isOpen()) {
-		sf::sleep(sf::Time(sf::milliseconds(100)));
+		sf::sleep(sf::Time(sf::milliseconds(m_SnakeSpeed)));
 		sf::Event e;
 		update(e);
 		draw();
@@ -100,7 +102,7 @@ void Application::handleEvent() {
 	if (!m_Snake.collisionWithBody()) {
 		if (m_IsStartButtonPressed) {
 			m_Snake.handleEvent(m_Window);
-			m_Food.update(m_Snake);
+			m_Food.update(m_Snake, m_SnakeSpeed);
 		}else {
 			m_MainMenu.handleEvent(m_Window, m_IsStartButtonPressed, m_IsStopButtonPressed);
 		}

@@ -44,5 +44,7 @@ private:
 	bool m_IsStartButtonPressed;
 	bool m_IsStopButtonPressed;
 
+	int m_SnakeSpeed = 0;
+
 };
 
